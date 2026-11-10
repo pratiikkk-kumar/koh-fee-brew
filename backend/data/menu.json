@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Chicken Malai Tikka",
+    "category": "Starter",
+    "price": 349,
+    "description": "Tender chicken marinated in cream and aromatic spices, slow-charred in a clay oven. Served with mint chutney.",
+    "tag": "Chef's Pick",
+    "image": "/assets/menu/menu_item_1.png"
+  },
+  {
+    "id": 2,
+    "name": "Truffle Mushroom Risotto",
+    "category": "Main Course",
+    "price": 499,
+    "description": "Creamy Italian-style arborio rice with wild mushrooms, black truffle shavings, parmesan foam & truffle oil drizzle.",
+    "tag": "Bestseller",
+    "image": "/assets/menu/menu_item_2.png"
+  },
+  {
+    "id": 3,
+    "name": "Dark Chocolate Fondant",
+    "category": "Dessert",
+    "price": 279,
+    "description": "Warm Belgian chocolate lava cake with a molten heart, served with vanilla bean ice cream and raspberry coulis.",
+    "tag": "Must Try",
+    "image": "/assets/menu/menu_item_3.png"
+  },
+  {
+    "id": 4,
+    "name": "Signature Cold Brew",
+    "category": "Beverages",
+    "price": 199,
+    "description": "18-hour slow-steeped dark roast, served over a crystal ice sphere with a touch of cream. Our signature pour.",
+    "tag": "Signature",
+    "image": "/assets/menu/menu_item_4.png"
+  },
+  {
+    "id": 5,
+    "name": "Paneer Tikka Masala",
+    "category": "Main Course",
+    "price": 389,
+    "description": "Cottage cheese cubes roasted in tandoor, served in a rich tomato and onion gravy.",
+    "tag": "",
+    "image": null
+  },
+  {
+    "id": 6,
+    "name": "Crispy Calamari",
+    "category": "Starter",
+    "price": 429,
+    "description": "Golden fried calamari rings served with house-made garlic aioli and a wedge of lemon.",
+    "tag": "",
+    "image": null
+  },
+  {
+    "id": 7,
+    "name": "Classic Tiramisu",
+    "category": "Dessert",
+    "price": 319,
+    "description": "Layers of espresso-soaked ladyfingers and mascarpone cream, dusted with cocoa powder.",
+    "tag": "Classic",
+    "image": null
+  },
+  {
+    "id": 8,
+    "name": "Matcha Latte",
+    "category": "Beverages",
+    "price": 249,
+    "description": "Premium grade matcha whisked with steamed milk, lightly sweetened.",
+    "tag": "",
+    "image": null
+  },
+  {
+    "id": 9,
+    "name": "Spaghetti Carbonara",
+    "category": "Main Course",
+    "price": 459,
+    "description": "Traditional Roman pasta with pancetta, egg yolks, pecorino cheese, and black pepper.",
+    "tag": "",
+    "image": null
+  }
+]

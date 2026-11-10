@@ -1,0 +1,377 @@
+/* ─── Section ──────────────────────────────── */
+.section {
+  padding: 8rem 0 6rem;
+  background: var(--espresso);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background accents */
+.bgAccent1 {
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 134, 10, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.bgAccent2 {
+  position: absolute;
+  bottom: -80px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 134, 10, 0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Subtle horizontal rule line */
+.bgLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 134, 10, 0.25), transparent);
+}
+
+/* ─── Scroll Reveal ────────────────────────── */
+.revealEl {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revealEl.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Header ───────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.labelDash {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--amber);
+  opacity: 0.6;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.1rem;
+}
+
+.subtext {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 380px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Grid ─────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* ─── Card ─────────────────────────────────── */
+.card {
+  background: var(--espresso-mid);
+  border: 1px solid rgba(200, 134, 10, 0.14);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(200, 134, 10, 0.3);
+  border-color: rgba(200, 134, 10, 0.35);
+}
+
+/* ─── Image ────────────────────────────────── */
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--espresso-light);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
+}
+
+.card:hover .image {
+  transform: scale(1.07);
+}
+
+/* Shine sweep on hover */
+.imageShine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .imageShine {
+  opacity: 1;
+}
+
+/* Bottom gradient on image */
+.imageWrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(22, 13, 7, 0.65) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Badges */
+.tagBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  background: var(--amber);
+  color: var(--white);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.7rem;
+  border-radius: 1px;
+  box-shadow: 0 2px 8px rgba(200, 134, 10, 0.45);
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  background: rgba(10, 6, 3, 0.65);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.7rem;
+  border-radius: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Info ─────────────────────────────────── */
+.info {
+  padding: 1.5rem 1.5rem 1.8rem;
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.priceWrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.1rem;
+  flex-shrink: 0;
+}
+
+.currency {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--amber);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--amber-light);
+  line-height: 1;
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+/* Hover CTA row */
+.cardCta {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.card:hover .cardCta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaDash {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--amber);
+}
+
+.ctaText {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber-light);
+}
+
+/* ─── Footer CTA ───────────────────────────── */
+.footerCta {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.menuLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.4rem;
+  border: 1px solid rgba(200, 134, 10, 0.5);
+  color: var(--amber-light);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.menuLink:hover {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(200, 134, 10, 0.4);
+}
+
+/* ─── Responsive ───────────────────────────── */
+@media (max-width: 600px) {
+  .section { padding: 6rem 0 5rem; }
+  .header  { margin-bottom: 3.5rem; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 4.5rem 0 4rem; }
+
+  .heading {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .info {
+    padding: 1.2rem 1.2rem 1.5rem;
+  }
+
+  .name {
+    font-size: 1.15rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  .menuLink {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Always show CTA on touch (no hover state) */
+  .cardCta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,156 @@
+.page {
+  background: var(--cream);
+  min-height: 100vh;
+  padding-bottom: 6rem;
+}
+
+.header {
+  padding: 10rem 0 4rem;
+  background: var(--espresso);
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.subtext {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--espresso);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.categoryTitle {
+  font-size: 2.5rem;
+  color: var(--amber);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.itemCard {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+}
+
+.itemInfo {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin: 0;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.tag {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--espresso);
+  background: var(--amber-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .header {
+    padding: 8rem 0 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .subtext {
+    font-size: 0.95rem;
+  }
+
+  .categoryTitle {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 7rem 0 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    gap: 3rem;
+  }
+
+  .categoryTitle {
+    font-size: 1.75rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .itemInfo {
+    padding: 1.2rem;
+  }
+}

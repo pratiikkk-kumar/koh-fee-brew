@@ -1,0 +1,148 @@
+.about {
+  padding: 7rem 0;
+  background: var(--cream);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.textSide {
+  max-width: 520px;
+}
+
+.label {
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  color: var(--espresso);
+  margin-bottom: 1.8rem;
+}
+
+.body {
+  font-size: 0.95rem;
+  color: #4a3828;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.pillars {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem 1.2rem;
+  background: var(--espresso);
+  border-radius: var(--radius);
+  min-width: 100px;
+}
+
+.pillarIcon {
+  font-size: 1.4rem;
+}
+
+.pillarLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber-light);
+  text-align: center;
+}
+
+/* Image side */
+.imageSide {
+  position: relative;
+}
+
+.imageFrame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: var(--shadow);
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.imageFrame:hover .mainImage {
+  transform: scale(1.03);
+}
+
+.accentCard {
+  position: absolute;
+  bottom: -2rem;
+  left: -2.5rem;
+  width: 52%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 4px solid var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.accentImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.accentCard:hover .accentImage {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .textSide { max-width: 100%; }
+
+  .accentCard {
+    left: auto;
+    right: 1rem;
+    bottom: -1.5rem;
+    width: 42%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about { padding: 5rem 0; }
+  .accentCard { display: none; }
+
+  .pillars {
+    gap: 0.75rem;
+  }
+
+  .pillar {
+    padding: 0.8rem 1rem;
+    min-width: 80px;
+    flex: 1;
+  }
+
+  .heading {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .body {
+    font-size: 0.9rem;
+  }
+}
